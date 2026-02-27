@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
@@ -38,8 +39,10 @@ export function CTASection() {
           Free to get started.
         </p>
         <div className="mt-8">
-          <Button size="lg" className="gap-2">
-            Create Your First Design <ArrowRight className="size-4" />
+          <Button size="lg" className="gap-2" asChild>
+            <Link to="/signup">
+              Create Your First Design <ArrowRight className="size-4" />
+            </Link>
           </Button>
         </div>
       </div>

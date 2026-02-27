@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -44,11 +45,13 @@ export function HeroSection() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up"
           style={{ animationDelay: '0.3s' }}
         >
-          <Button size="lg" className="gap-2">
-            Get Started <ArrowRight className="size-4" />
+          <Button size="lg" className="gap-2" asChild>
+            <Link to="/signup">
+              Get Started <ArrowRight className="size-4" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline">
-            See How It Works
+          <Button size="lg" variant="outline" asChild>
+            <a href="#how-it-works">See How It Works</a>
           </Button>
         </div>
       </div>

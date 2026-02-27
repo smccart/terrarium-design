@@ -26,7 +26,7 @@ export function HowItWorks() {
   const headerRef = useScrollAnimation<HTMLDivElement>()
 
   return (
-    <section className="py-24 px-6 bg-muted/30">
+    <section id="how-it-works" className="py-24 px-6 bg-muted/30 scroll-mt-16">
       <div className="mx-auto max-w-4xl">
         <div ref={headerRef} className="animate-on-scroll text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

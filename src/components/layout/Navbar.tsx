@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { Leaf, Sun, Moon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useAppStore } from '@/stores'
@@ -42,8 +43,8 @@ export function Navbar({ transparent = false }: NavbarProps) {
             <Sun className="size-4" />
           )}
         </Button>
-        <Button variant="outline" size="sm">
-          Sign In
+        <Button variant="outline" size="sm" asChild>
+          <Link to="/login">Sign In</Link>
         </Button>
       </div>
     </header>
