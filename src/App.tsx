@@ -1,17 +1,10 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
 import { useAppStore } from '@/stores'
-
-function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Terrarium Designer</h1>
-        <p className="text-muted-foreground">Design beautiful terrariums</p>
-      </div>
-    </div>
-  )
-}
+import { LandingShell } from '@/components/layout/LandingShell'
+import { EditorShell } from '@/components/layout/EditorShell'
+import { Landing } from '@/routes/Landing'
+import { Editor } from '@/routes/Editor'
 
 function App() {
   const theme = useAppStore((s) => s.theme)
@@ -32,7 +25,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<LandingShell />}>
+          <Route path="/" element={<Landing />} />
+        </Route>
+        <Route element={<EditorShell />}>
+          <Route path="/editor" element={<Editor />} />
+          <Route path="/editor/:projectId" element={<Editor />} />
+        </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
